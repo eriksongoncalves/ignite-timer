@@ -15,7 +15,7 @@ const containerModifiers = {
 export const Container = styled.button<ContainerProps>`
   ${({ variant }) => css`
     width: 100px;
-    height: 48px;s
+    height: 48px;
 
     background: ${containerModifiers[variant]};
   `}
