@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: 62.5%
 	}
 
-	html, body, #__next{
+	html, #root{
 		height: 100%;
 	}
 
