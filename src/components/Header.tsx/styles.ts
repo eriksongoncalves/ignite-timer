@@ -8,11 +8,11 @@ export const Container = styled.div`
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 0.5rem;
 
       a {
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;

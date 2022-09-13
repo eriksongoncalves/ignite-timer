@@ -13,16 +13,6 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-	html {
-		font-size: 62.5%
-	}
-
-	html, #root{
-		height: 100%;
-	}
-
-  
-
   ${({ theme }) => css`
     :focus {
       outline: 0;
