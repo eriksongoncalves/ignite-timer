@@ -1,19 +1,33 @@
 import { Play } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from 'zod'
 
 import * as S from './styles'
 
-type FormData = {
-  task: string
-  minutesAmount: number
-}
+const newCycleSchemaValidation = zod.object({
+  task: zod.string().min(1, 'Informe a tarefa'),
+  minutesAmount: zod
+    .number()
+    .min(5, 'O mínimo é de 5 minutos')
+    .max(60, 'O máximo é de 5 minutos')
+})
+
+type FormData = zod.infer<typeof newCycleSchemaValidation>
 
 export function Home() {
-  const { handleSubmit, register, watch } = useForm<FormData>()
+  const { handleSubmit, register, watch, reset } = useForm<FormData>({
+    resolver: zodResolver(newCycleSchemaValidation),
+    defaultValues: {
+      task: '',
+      minutesAmount: 5
+    }
+  })
 
   const handleCreateNewCycle = (data: FormData) => {
     // eslint-disable-next-line no-console
     console.log('>>> ', data)
+    reset()
   }
 
   const task = watch('task')
