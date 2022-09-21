@@ -23,8 +23,7 @@
     "node_modules"
   ],
   "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
 }
