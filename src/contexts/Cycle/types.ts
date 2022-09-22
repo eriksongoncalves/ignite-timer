@@ -10,13 +10,21 @@ export type Cycle = {
 }
 
 export type ContextProps = {
+  cycles: Cycle[]
   activeCycle?: Cycle
   activeCycleId?: string
   amountSecondsPassed: number
   markCurrentCycleAsFinished(): void
   setSecondsPassed(value: number): void
+  createNewCycle(data: CreateNewCycleDto): void
+  interruptCycle(): void
 }
 
 export type CycleProviderProps = {
   children: ReactNode
-} & ContextProps
+}
+
+export type CreateNewCycleDto = {
+  task: string
+  minutesAmount: number
+}
