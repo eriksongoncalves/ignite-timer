@@ -3,7 +3,7 @@ import { Cycle } from '../../reducers/Cycle/types'
 export type ContextProps = {
   cycles: Cycle[]
   activeCycle?: Cycle
-  activeCycleId?: string
+  activeCycleId: string | null
   amountSecondsPassed: number
   markCurrentCycleAsFinished(): void
   setSecondsPassed(value: number): void
