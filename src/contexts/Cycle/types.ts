@@ -1,13 +1,4 @@
-import { ReactNode } from 'react'
-
-export type Cycle = {
-  id: string
-  task: string
-  minutesAmount: number
-  startDate: Date
-  interruptedDate?: Date
-  fineshedDate?: Date
-}
+import { Cycle } from '../../reducers/Cycle/types'
 
 export type ContextProps = {
   cycles: Cycle[]
@@ -21,7 +12,7 @@ export type ContextProps = {
 }
 
 export type CycleProviderProps = {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type CreateNewCycleDto = {
